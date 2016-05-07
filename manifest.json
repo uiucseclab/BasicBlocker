@@ -1,0 +1,19 @@
+{
+  "name": "A Basic Blocker",
+  "version": "Alpha",
+  "description": "Proof of concept for class project",
+  "permissions": ["webRequest", "webRequestBlocking","http://*/*", "https://*/*","tabs","<all_urls>", "webNavigation", "privacy"],
+  "background": {
+    "scripts": ["jquery-min.js", "background.js", "functions.js", "filters.js", "punycode.min.js"]
+  },
+  "content_scripts": [
+    {
+        "matches": ["http://*/*", "https://*/*"],
+        "js": ["jquery-min.js", "contentscript.js"]
+    }],
+  "browser_action": {
+    "default_title": "Settings",
+    "default_popup": "settings.html"
+  },
+  "manifest_version": 2
+}
